@@ -1,18 +1,30 @@
 import { gallery } from "../data/gallery";
+import SectionHeading from "./SectionHeading";
 
 export default function Gallery() {
   return (
-    <section className="gallery" id="gallery">
-      <h1 className="heading">Our Food <span>Gallery</span></h1>
+    <section id="gallery" className="scroll-mt-20">
+      <SectionHeading preText="Our Food" highlight="Gallery" />
 
-      <div className="box-container">
+      {/* 2 cols on phones, more once there's room */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {gallery.map((item) => (
-          <div className="box" key={item.id}>
-            <img src={item.image} alt={item.alt} />
-            <div className="content">
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-              <a href="#order" className="btn">Order Now</a>
+          <div
+            key={item.id}
+            className="group relative overflow-hidden rounded-box aspect-square"
+          >
+            {/* group-hover on the img zooms it when the whole tile is hovered */}
+            <img
+              src={item.image}
+              alt={item.alt}
+              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+
+            {/* dark overlay, hidden until hover (or tab focus) */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-black/60 p-3 text-center text-white opacity-0 transition-opacity group-hover:opacity-100 focus-within:opacity-100">
+              <h3 className="font-bold">{item.title}</h3>
+              <p className="text-xs line-clamp-3">{item.text}</p>
+              <a href="#order" className="btn btn-primary btn-xs mt-2">Order Now</a>
             </div>
           </div>
         ))}

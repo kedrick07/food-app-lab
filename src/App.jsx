@@ -11,10 +11,12 @@ import ScrollTopButton from "./components/ScrollTopButton";
 
 export default function App() {
   return (
-    <>
+    <div className="min-h-screen bg-base-100 text-base-content">
       <Loader />
       <Navbar />
-      <main>
+
+      {/* all the sections live in here, space-y-24 handles the gaps between them */}
+      <main className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 space-y-24">
         <Hero />
         <Speciality />
         <Popular />
@@ -22,8 +24,9 @@ export default function App() {
         <Reviews />
         <OrderForm />
       </main>
+
       <Footer />
       <ScrollTopButton />
-    </>
+    </div>
   );
 }

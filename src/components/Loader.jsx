@@ -10,9 +10,10 @@ export default function Loader() {
 
   if (!visible) return null;
 
+  // covers the whole screen for a sec, z-index high so it sits above the navbar
   return (
-    <div className="loader-container">
-      <img src="/images/loader.gif" alt="Loading" />
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-base-100">
+      <img src="/images/loader.gif" alt="Loading" className="w-24" />
     </div>
   );
 }

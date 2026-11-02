@@ -5,7 +5,7 @@ export default function Hero() {
       {/* make both column share width and have vertical space between h, p and button. center on mobile and left align on desktop */}
       <div className="flex-1 space-y-4 text-center md:text-left">
         {/* bigger text on larger screens 6xl is the sweet spot */}
-        <h3 className="text-4xl md:text-6xl font-extrabold text-primary">Tasty Bites</h3>
+        <h1 className="text-4xl md:text-6xl font-extrabold text-primary">Tasty Bites</h1>
         <p className="text-base-content/70 leading-relaxed">
           Welcome to Tasty Bites, where every meal is a culinary masterpiece
           delivered straight to your door. Explore a world of flavors with our

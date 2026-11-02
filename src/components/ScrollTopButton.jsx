@@ -12,8 +12,13 @@ export default function ScrollTopButton() {
 
   if (!show) return null;
 
+  // floating round button, bottom right
   return (
-    <a href="#home" id="scroll-top" aria-label="Scroll to top">
+    <a
+      href="#home"
+      aria-label="Scroll to top"
+      className="btn btn-circle btn-primary fixed bottom-6 right-6 z-40 shadow-lg"
+    >
       <FaAngleUp />
     </a>
   );
