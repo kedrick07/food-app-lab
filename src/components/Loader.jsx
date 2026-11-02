@@ -12,9 +12,10 @@ export default function Loader() {
 
   // covers the whole screen for a sec, z-index high so it sits above the navbar
   // fixed inset-0 = stretches to all 4 edges, flex + items/justify-center puts the gif in the middle
+  // image path has no leading slash so it still works on github pages
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-base-100">
-      <img src="/images/loader.gif" alt="Loading" className="w-24" />
+      <img src="images/loader.gif" alt="Loading" className="w-24" />
     </div>
   );
 }

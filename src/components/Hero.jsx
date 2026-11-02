@@ -18,8 +18,9 @@ export default function Hero() {
       </div>
 
       <div className="flex-1">
+        {/* no leading slash on the image path or it breaks on github pages */}
         <img 
-          src="/images/home-img.png" 
+          src="images/home-img.png" 
           alt="Selection of Tasty Bites dishes" 
           className="w-full max-w-md mx-auto drop-shadow-xl"
         />
