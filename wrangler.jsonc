@@ -1,0 +1,9 @@
+{
+  // must match the project name in the cloudflare dashboard
+  "name": "food-app-lab",
+  "compatibility_date": "2026-11-01",
+  // no worker code, just serve whatever vite builds into dist
+  "assets": {
+    "directory": "./dist"
+  }
+}
