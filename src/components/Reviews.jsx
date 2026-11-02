@@ -7,11 +7,13 @@ export default function Reviews() {
     <section id="review" className="scroll-mt-20">
       <SectionHeading preText="Our Customers" highlight="Reviews" />
 
+      {/* stacked on mobile, 3 across from md up */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {reviews.map((item) => (
           <div key={item.id} className="card bg-base-100 shadow-md">
             <div className="card-body items-center text-center">
               {/* avatar + ring so the photos look like proper profile pics */}
+              {/* ring-offset makes a small gap between the photo and the colored ring */}
               <div className="avatar">
                 <div className="w-20 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                   <img src={item.image} alt={item.alt} />

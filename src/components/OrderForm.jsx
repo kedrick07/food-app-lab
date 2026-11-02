@@ -7,6 +7,7 @@ const emptyForm = { name: "", email: "", phone: "", food: "", address: "" };
 
 // same look for every field so i only write it once
 // plain tailwind here because daisy's input class wasnt showing a border
+// border-base-300 = light grey border from the theme, focus: classes only kick in when you click the field
 const fieldClass =
   "w-full rounded-lg border border-base-300 bg-base-100 px-4 py-3 text-sm outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/30";
 const labelClass = "mb-1 block text-sm font-medium";
@@ -33,9 +34,11 @@ export default function OrderForm() {
       <SectionHeading highlight="Order" postText="Now" />
 
       {/* one card split in two: info on the left, form on the right */}
+      {/* 5 column grid on desktop: left takes 2, right takes 3. stacks on mobile */}
       <div className="mx-auto grid max-w-5xl overflow-hidden rounded-2xl shadow-xl md:grid-cols-5">
         <div className="space-y-6 bg-primary p-8 text-primary-content md:col-span-2">
           <h3 className="text-2xl font-bold">Hungry? Let's fix that.</h3>
+          {/* opacity-90 so the paragraph is a bit softer than the title */}
           <p className="text-sm opacity-90">
             Fill in the form and we'll get your food ready and on its way.
           </p>
@@ -54,6 +57,7 @@ export default function OrderForm() {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4 bg-base-100 p-8 md:col-span-3">
+          {/* 2 fields per row on desktop, 1 on mobile */}
           <div className="grid gap-4 md:grid-cols-2">
             <div>
               <label htmlFor="name" className={labelClass}>Name</label>
@@ -84,6 +88,7 @@ export default function OrderForm() {
             <textarea id="address" name="address" rows="4" placeholder="Street, area, city" value={form.address} onChange={handleChange} className={fieldClass} required />
           </div>
 
+          {/* hover:opacity-90 dims it a little, active:scale makes it feel pressed */}
           <button
             type="submit"
             className="w-full rounded-lg bg-primary px-4 py-3 font-semibold text-primary-content shadow transition hover:opacity-90 active:scale-[0.99]"

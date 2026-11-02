@@ -8,14 +8,17 @@ export default function Popular() {
       <SectionHeading preText="Our" highlight="Popular" postText="Foods" />
       
       {/* replacing box container with grid. realtice on figure make it to anchor, pin the badge to top right corner and use daisyui price tag*/}
+      {/* 2 columns even on phones so the cards dont get too tall */}
       <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
         {popular.map((item) => (
           <div
             key={item.id}
             className="card bg-base-100 shadow-md hover:shadow-xl transition-shadow overflow-hidden"
           >
+            {/* relative here so the badge can be placed inside the image */}
             <figure className="relative">
               <img src={item.image} alt={item.alt} className="h-48 w-full object-cover" />
+              {/* absolute top-3 right-3 = stuck in the top right corner of the photo */}
               <span className="badge badge-secondary absolute top-3 right-3 font-bold">
                 {item.price}
               </span>

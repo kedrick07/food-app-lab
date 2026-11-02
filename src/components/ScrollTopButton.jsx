@@ -13,6 +13,7 @@ export default function ScrollTopButton() {
   if (!show) return null;
 
   // floating round button, bottom right
+  // fixed = stays on screen while scrolling, z-40 keeps it above the cards
   return (
     <a
       href="#home"
