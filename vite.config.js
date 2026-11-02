@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
 
-// github pages serves the site from /food-app-lab/ so the build needs that base
-// locally (npm run dev) we keep "/" so nothing changes
+// github pages needs the /food-app-lab/ base, everywhere else stays "/"
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), tailwindcss()],
   base: process.env.GITHUB_ACTIONS ? "/food-app-lab/" : "/",
 });
